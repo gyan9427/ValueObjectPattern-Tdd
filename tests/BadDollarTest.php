@@ -5,11 +5,24 @@ use App\Classes\BadDollar;
 
 class BadDollarTest extends TestCase
 {
+    private $mock;
+    private $class;
+
+    protected function setUp(): void
+    {
+        $this->mock = $this->createMock(BadDollar::class);
+        $this->class = BadDollar::class;
+    }
     public function testBadDollarClassForGetAmountMethod()
     {
-        $mock = $this->createMock(BadDollar::class);
-        $mock->method("getAmount")
+
+        $this->mock->method("getAmount")
             ->willReturn(true);
-        $this->assertTrue($mock->getAmount());
+        $this->assertTrue($this->mock->getAmount());
+    }
+
+    public function testBadDollarMustHaveAmountAttribute()
+    {
+        $this->assertClassHasAttribute('amount',$this->class);
     }
 }
