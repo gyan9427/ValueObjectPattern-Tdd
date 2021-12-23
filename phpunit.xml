@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit stopOnFailure="false"
+         colors="true"
+         verbose="true"
+         bootstrap="vendor/autoload.php">
+	<testsuites>
+		<testsuite name="value object pattern suite">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
